@@ -53,12 +53,12 @@ let myQuestions = [
 ];
 // elements on html
 let triviaContainer = document.getElementById('trivia');
-let resultsContainer = document.getElementById('results');
-let submitButton = document.getElementById('submit');
+let resultsContainer = $('#results');
+let submitButton = $('#submit');
 // functions for showing my trivia game
 generateQuiz(myQuestions, triviaContainer, resultsContainer, submitButton);
 
-function generateQuiz(questions, triviaContainer, resultsContainer, submitButton) {
+function generateQuiz(questions, triviaContainer, resultsContainer) {
 
     function showQuestions(questions, triviaContainer) {
         let output = [];
@@ -92,9 +92,11 @@ function generateQuiz(questions, triviaContainer, resultsContainer, submitButton
             if (userAnswer === questions[i].correctAnswer) {
                 numCorrect++;
                 answerContainers[i].style.color = 'lightgreen';
+                count = 'paused';
             }
             else {
                 answerContainers[i].style.color = 'red';
+                count = 'paused';
             }
         }
         $(resultsContainer).html(numCorrect + ' out of ' + questions.length);
@@ -107,4 +109,8 @@ function generateQuiz(questions, triviaContainer, resultsContainer, submitButton
 }
     // count down timer
     let countDown = $('#timer')
-    
+    var count = 60 
+    timer = setInterval(function() {
+        $(countDown).html(count--);
+        if(count === 0) clearInterval(timer);
+    }, 1000);

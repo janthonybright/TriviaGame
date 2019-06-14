@@ -5,7 +5,7 @@ body {
     text-align: center;
     color: white;
 }
-h2 {
+#header{
     background-color: hotpink;
     padding: 10px;
 }
