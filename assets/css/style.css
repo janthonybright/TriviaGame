@@ -1,0 +1,21 @@
+body {
+    background-image: url(../images/pink-dust.png);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+}
+h2 {
+    background-color: hotpink;
+    padding: 10px;
+}
+#trivia {
+    text-align: center;
+}
+#submit {
+    margin: 15px;
+    padding: 10px;
+}
+#results {
+
+}
